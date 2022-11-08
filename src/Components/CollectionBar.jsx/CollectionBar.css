@@ -9,11 +9,28 @@
 }
 
 .bar {
+    
     background-color: grey;
-    border-radius: 10px;
+    border-radius: px;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    text-justify: center;
 }
-.c-box {
-    padding: 1em;
+.c-box1 {
+    margin: auto;
+    width: 25%;
+}
+.c-box2 {
+    background-color: aliceblue;
+    margin: auto;
+    width: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.c-box3 {
+    margin: auto;
+    
+    width: 25%;
 }

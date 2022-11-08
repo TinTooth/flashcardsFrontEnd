@@ -1,0 +1,42 @@
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.45);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal {
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.modal-header{
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    color:aliceblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap :5em;
+    background-color: rgb(54, 79, 54);
+}
+
+.modal-close-btn {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.modal-body {
+    padding: 3em;
+}

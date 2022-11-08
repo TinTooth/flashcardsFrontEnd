@@ -7,9 +7,9 @@ const CollectionBar = ({setCurrentSelections, collections, setCurrentCard}) => {
     return (  
         <div className="collection-container">
             <div className='bar'>
-                <div className="c-box" onClick = {tempclick}>Collections</div>
-                <div className="c-box">DropDown Place Holder</div>
-                <div className='c-box' onClick = {tempclick2}>Button</div>
+                <div className="c-box1" onClick = {tempclick}>Collections</div>
+                <div className="c-box2">DropDown Place Holder</div>
+                <div className='c-box3' onClick = {tempclick2}>Button</div>
             </div>
         </div>
     );

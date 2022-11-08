@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div>
+      
       <div className='main-container'>
         <NextPrev setCurrentCard={setCurrentCard} 
           flashCards = {flashCards} currentCard = {currentCard} 
