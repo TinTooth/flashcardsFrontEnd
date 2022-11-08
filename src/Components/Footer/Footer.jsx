@@ -31,12 +31,10 @@ const Footer = ({currentCollection, getFlashCards}) => {
     } 
 
 
-    
-
     return ( 
         <div className='footer'>
             <Modal title = 'Add Card' onClose={handleAdd} show ={showAdd}>
-                <AddCard close={handleAdd} addCard= {addCard}/>
+                <AddCard close={handleAdd} addCard= {addCard} currentCollection={currentCollection}/>
                 </Modal>
 
             <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>Test</Modal>

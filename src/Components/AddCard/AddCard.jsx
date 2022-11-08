@@ -1,7 +1,7 @@
 import './AddCard.css'
 import React, { useState } from 'react';
 
-const AddCard = ({close, addCard}) => {
+const AddCard = ({close, addCard, currentCollection}) => {
     const [word,setWord] = useState('');
     const [definition,setDefinition] = useState('');
 
@@ -12,20 +12,25 @@ const AddCard = ({close, addCard}) => {
         close();
     }
 
-    return (  
+    return currentCollection? (  
         <form onSubmit = {handleSubmit}>
-            <div>
+            <div className='form-group'>
                 <label>Question</label>
                 <input type="text" value = {word} onChange = {(e)=> setWord(e.target.value)}/>
             </div>
-            <div>
+            <div className = 'form-group'>
                 <label>Answer</label>
-                <input type="text" value = {definition} onChange = {(e)=> setDefinition(e.target.value)}/>
+                <textarea value = {definition} onChange = {(e)=> setDefinition(e.target.value)}/>
             </div>
             <button type = 'sumbit'>Add Card</button>
+            <button className = 'bgp'onClick = {close}>Cancel</button>
         </form>
 
-    );
+    ): 
+        <form >
+        <h3 className='modal-warning'>Please Select a Collection First </h3>
+        <button className = 'bgp'onClick = {close}>Close</button>
+        </form>
 }
  
 export default AddCard;
