@@ -1,0 +1,26 @@
+.card-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(61, 61, 61);
+    width: 25%;
+    font-size: 35px;
+    cursor: pointer;
+    height: 100%;
+    user-select: none;
+    
+  }
+.card-select-no-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(61, 61, 61);
+    width: 25%;
+    height: 100%;
+    user-select: none;
+    
+  }
+  
+  .card-select:hover{
+    background-image: radial-gradient(45% 30% at center,rgba(21, 78, 33, 0.22),rgba(103, 187, 103, 0.22),rgb(154, 194, 154));
+  }

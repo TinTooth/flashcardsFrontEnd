@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer';
 import CardNum from './Components/CardNum/CardNum';
 import CollectionBar from './Components/CollectionBar.jsx/CollectionBar';
 import Card from './Components/Card/Card';
+import NextPrev from './Components/NextPrev/NextPrev';
 
 function App() {
   const [collections,setCollections] = useState([]);
@@ -33,26 +34,34 @@ function App() {
       getFlashCards(collection.id);
   }
 
-  const changeCard = (mod) => {
-    if (flashCards.length){
-      let result = currentCard + mod;
-      if (result > flashCards.length){ setCurrentCard(0)}
-      else if ( result < 0 ){ setCurrentCard(flashCards.length)}
-      else { setCurrentCard(result)}
-    }
+  const upCardClick = () => {
+      let result = currentCard + 1;
+      if (result+1 > flashCards.length){setCurrentCard(0);}
+      else { setCurrentCard(result);}
   }
+
+  const downCardClick = () => {
+    let result = currentCard - 1;
+    let length = flashCards.length;
+    if ( result < 0 ){ setCurrentCard(length-1);}
+    else { setCurrentCard(result);}
+}
 
 
   return (
     <div>
       <div className='main-container'>
-        <div className="card-select" onClick = {changeCard(-1)}>PREV</div>
+        <NextPrev setCurrentCard={setCurrentCard} 
+        flashCards = {flashCards} currentCard = {currentCard} 
+        click = {downCardClick} text = 'PREV'></NextPrev> 
         <div className='center-container'>
           <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections}/>
           <Card flashCards={flashCards} currentCard={currentCard}/>
           <CardNum flashCards={flashCards} currentCard = {currentCard}/>
         </div>
-        <div className="card-select" onClick = {changeCard(1)}>NEXT</div>
+        <NextPrev setCurrentCard={setCurrentCard} 
+          flashCards = {flashCards} currentCard = {currentCard} 
+          click = {upCardClick} text = 'PREV'></NextPrev> 
       </div> 
       <Footer/>
     </div>
