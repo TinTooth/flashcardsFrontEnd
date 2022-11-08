@@ -64,7 +64,9 @@ function App() {
           flashCards = {flashCards} currentCard = {currentCard} 
           click = {upCardClick} text = 'NEXT'></NextPrev> 
       </div> 
-      <Footer currentCollection={currentCollection} getFlashCards ={getFlashCards}/>
+      <Footer currentCollection={currentCollection} getFlashCards ={getFlashCards}
+       currentCard = {currentCard} flashCards = {flashCards}
+       setCurrentCard = {setCurrentCard}/>
     </div>
   );
 }
