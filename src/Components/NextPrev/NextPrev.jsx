@@ -15,7 +15,7 @@ const NextPrev = ({setCurrentCard,flashCards,currentCard,click,text}) => {
       else { setCurrentCard(result);}
     }
 
-    return flashCards.length? ( 
+    return flashCards[0].word? ( 
         <div className="card-select" onClick = {click}>{text}</div>
      ):<div className="card-select-no-hover"></div>;
 }

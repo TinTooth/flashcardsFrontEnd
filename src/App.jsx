@@ -9,7 +9,7 @@ import NextPrev from './Components/NextPrev/NextPrev';
 
 function App() {
   const [collections,setCollections] = useState([]);
-  const [flashCards,setFlashCards] = useState([]);
+  const [flashCards,setFlashCards] = useState([{word:"",definition: ""}]);
   const [currentCollection,setCurrentCollection] = useState();
   const [currentCard, setCurrentCard] = useState(0)
 
@@ -52,16 +52,16 @@ function App() {
     <div>
       <div className='main-container'>
         <NextPrev setCurrentCard={setCurrentCard} 
-        flashCards = {flashCards} currentCard = {currentCard} 
-        click = {downCardClick} text = 'PREV'></NextPrev> 
+          flashCards = {flashCards} currentCard = {currentCard} 
+          click = {downCardClick} text = 'PREV'></NextPrev> 
         <div className='center-container'>
-          <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections}/>
+          <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard}/>
           <Card flashCards={flashCards} currentCard={currentCard}/>
           <CardNum flashCards={flashCards} currentCard = {currentCard}/>
         </div>
         <NextPrev setCurrentCard={setCurrentCard} 
           flashCards = {flashCards} currentCard = {currentCard} 
-          click = {upCardClick} text = 'PREV'></NextPrev> 
+          click = {upCardClick} text = 'NEXT'></NextPrev> 
       </div> 
       <Footer/>
     </div>
