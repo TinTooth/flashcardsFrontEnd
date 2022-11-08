@@ -1,0 +1,19 @@
+.collection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(154, 194, 154);
+    width: 100%;
+    height: 28%;
+    font-size: 20px;
+}
+
+.bar {
+    background-color: grey;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.c-box {
+    padding: 1em;
+}

@@ -1,0 +1,12 @@
+.cardnum-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(154, 194, 154);
+    width: 100%;
+    height: 28%;
+    font-size: 25px;
+}
+
+.num {
+    padding-top: 4em;
+}

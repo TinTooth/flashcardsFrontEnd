@@ -1,7 +1,9 @@
-const CardNum = ({currentCollection,flashCards,currentCard}) => {
-    return currentCollection ?(
+import './CardNum.css'
+
+const CardNum = ({flashCards,currentCard}) => {
+    return flashCards.length?(
         <div className = 'cardnum-container'>
-            <div>{currentCard}:{flashCards.length}</div> 
+            <div className = 'num'>{currentCard+1}/{flashCards.length}</div> 
         </div>
     ): null;
 }
