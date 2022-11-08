@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Footer.css'
 import Modal from '../Modal/Modal';
+import AddCard from '../AddCard/AddCard';
+import axios from 'axios';
 
-const Footer = (prop) => {
+const Footer = ({currentCollection, getFlashCards}) => {
     const [showAdd,setShowAdd] = useState(false)
     const [showEdit,setShowEdit] = useState(false)
     const [showDelete,setShowDelete] = useState(false)
@@ -19,11 +21,24 @@ const Footer = (prop) => {
         if (!showDelete) {setShowDelete(true);}
         else {setShowDelete(false);}
     }
+
+    async function addCard(newCard) {
+        let endpoint = 'http://127.0.0.1:8000/api/collections/' + currentCollection.id +'/cards/'
+        const response = await axios.post(endpoint,newCard)
+        if (response.status === 201){
+            getFlashCards(currentCollection.id)
+        }
+    } 
+
+
     
 
     return ( 
         <div className='footer'>
-            <Modal title = 'Add Card' onClose={handleAdd} show ={showAdd}>Test Child</Modal>
+            <Modal title = 'Add Card' onClose={handleAdd} show ={showAdd}>
+                <AddCard close={handleAdd} addCard= {addCard}/>
+                </Modal>
+
             <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>Test</Modal>
             <Modal title = 'Edit Card' onClose = {handleDelete} show ={showDelete}>Tester</Modal>
             <div className='brand'>Brand</div>
