@@ -45,3 +45,9 @@
 form {
     font-size: larger;
 }
+
+.divider{
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1em;
+}

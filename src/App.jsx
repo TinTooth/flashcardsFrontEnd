@@ -10,7 +10,7 @@ import NextPrev from './Components/NextPrev/NextPrev';
 function App() {
   const [collections,setCollections] = useState([]);
   const [flashCards,setFlashCards] = useState([{word:"",definition: ""}]);
-  const [currentCollection,setCurrentCollection] = useState();
+  const [currentCollection,setCurrentCollection] = useState({id: 0 ,title:''});
   const [currentCard, setCurrentCard] = useState(0)
 
   useEffect(() => {
@@ -57,7 +57,9 @@ function App() {
           flashCards = {flashCards} currentCard = {currentCard} 
           click = {downCardClick} text = 'PREV'></NextPrev> 
         <div className='center-container'>
-          <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard}/>
+          <CollectionBar  getFlashCards={getFlashCards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
+          collections={collections} setCurrentCard = {setCurrentCard} 
+          currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection}/>
           <Card flashCards={flashCards} currentCard={currentCard}/>
           <CardNum flashCards={flashCards} currentCard = {currentCard}/>
         </div>

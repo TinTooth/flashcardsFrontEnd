@@ -56,7 +56,7 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
                 <AddCard close={handleAdd} addCard= {addCard} currentCollection={currentCollection}/>
             </Modal>
 
-            <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>Test
+            <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>
                 <EditCard close = {handleEdit}  currentCard ={currentCard} currentCollection={currentCollection} 
                 editCard = {editCard} flashCards = {flashCards}/>
             </Modal>

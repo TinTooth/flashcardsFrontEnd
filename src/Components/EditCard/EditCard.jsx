@@ -14,7 +14,7 @@ const EditCard = ({currentCard,flashCards,editCard,close, currentCollection}) =>
         close();
     }
 
-    return currentCollection? (  
+    return currentCollection.title? (  
         <form onSubmit = {handleSubmit}>
             <div className='form-group'>
                 <label>Question</label>
