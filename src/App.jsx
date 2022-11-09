@@ -32,6 +32,7 @@ function App() {
   const setCurrentSelections = (collection) => {
       setCurrentCollection(collection);
       getFlashCards(collection.id);
+      setCurrentCard(0);
   }
 
   const upCardClick = () => {
