@@ -64,15 +64,15 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, se
                 <div className="dropdown c-box1">
                     <div className = "dropbtn">Collections</div>
                     <div className='dropdown-content'> 
-                        <ul>
+                        <div className = 'drpli'>
                            {collections.map((collection,i) => {
                                return(
-                                   <li key = {i}>
+                                   <span className='collection' key = {i}>
                                     <Collection collection = {collection} setCurrentSelections = {setCurrentSelections}/>
-                                </li>
+                                </span>
                             )
                         })} 
-                        </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="c-box2" >{currentCollection.title} Collection</div>

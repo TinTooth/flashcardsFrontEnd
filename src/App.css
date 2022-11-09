@@ -1,7 +1,7 @@
 .main-container {
   height: 90vh;
   display: flex;
-  background-color: rgb(154, 194, 154);
+  background-color: rgb(135, 159, 135);
   align-content: center;
   flex-grow: 1;
   
@@ -33,11 +33,10 @@
 }
 
 .card-select:hover{
-  background-image: radial-gradient(45% 30% at center,rgba(21, 78, 33, 0.22),rgba(103, 187, 103, 0.22),rgb(154, 194, 154));
+  background-image: radial-gradient(45% 30% at center,rgba(21, 78, 33, 0.22),rgba(103, 187, 103, 0.22),rgb(135, 159, 135,0));
 }
 
 .center-container {
-  background-color: rgb(154, 194, 154);
   width: 50%;
 }  
 
