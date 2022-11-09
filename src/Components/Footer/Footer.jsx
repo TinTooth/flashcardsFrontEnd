@@ -4,6 +4,9 @@ import Modal from '../Modal/Modal';
 import AddCard from '../AddCard/AddCard';
 import axios from 'axios';
 import DeleteCard from '../DeleteCard/DeleteCard';
+import EditCard from '../EditCard/EditCard';
+
+
 
 const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCurrentCard}) => {
     const [showAdd,setShowAdd] = useState(false)
@@ -39,6 +42,13 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
         }
     } 
 
+    async function editCard(newCard) {
+        let endpoint = 'http://127.0.0.1:8000/api/collections/' + currentCollection.id +'/cards/' +flashCards[currentCard].id + '/'
+        const response = await axios.put(endpoint,newCard)
+        if (response.status === 200){
+            getFlashCards(currentCollection.id)
+        }
+    }
 
     return ( 
         <div className='footer'>
@@ -46,7 +56,11 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
                 <AddCard close={handleAdd} addCard= {addCard} currentCollection={currentCollection}/>
             </Modal>
 
-            <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>Test</Modal>
+            <Modal title = 'Edit Card' onClose = {handleEdit} show ={showEdit}>Test
+                <EditCard close = {handleEdit}  currentCard ={currentCard} currentCollection={currentCollection} 
+                editCard = {editCard} flashCards = {flashCards}/>
+            </Modal>
+            
             <Modal title = 'Delete Card' onClose = {handleDelete} show ={showDelete}>
                 <DeleteCard close = {handleDelete} deleteCard = {deleteCard} 
                 currentCard = {currentCard} flashCards = {flashCards}/>
