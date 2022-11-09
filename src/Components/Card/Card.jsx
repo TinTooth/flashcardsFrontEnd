@@ -9,6 +9,7 @@ const Card = ({flashCards,currentCard}) => {
     useEffect(() => {
         setDisplay(flashCards[currentCard].word);
         setClassStyle('words')
+        setWord(true);
     },[flashCards,currentCard])
     
     const handleClick = () => {
