@@ -4,7 +4,7 @@ import './Modal.css'
 const Modal = ({title,onClose,children,show,noClose}) => {
     return show && noClose == null ?(
         <>
-        <div className="modal-bg">
+        <div className = "modal-bg">
             <div className='modal'>
                 <div className="modal-header">
                     <h3>{title}</h3>
