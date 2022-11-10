@@ -5,6 +5,7 @@ import Modal from '../Modal/Modal';
 import AddCollection from '../AddCollection/AddCollection';
 import axios from 'axios';
 import AddCard from '../AddCard/AddCard';
+import dropDown from '../../Images/Drop2.png'
 
 
 const CollectionBar = ({setCurrentSelections, collections, currentCollection, setCurrentCollection, getAllCollections,getFlashCards}) => {
@@ -62,7 +63,11 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, se
         <div className="collection-container">
             <div className='bar'>
                 <div className="dropdown c-box1">
-                    <div className = "dropbtn">Collections</div>
+                    <div className = "dropbtn">Collections
+                    <div className='img-container'>
+                        <img src= {dropDown} alt=" dropdown icon" />
+                    </div>
+                    </div>
                     <div className='dropdown-content'> 
                         <div className = 'drpli'>
                            {collections.map((collection,i) => {
