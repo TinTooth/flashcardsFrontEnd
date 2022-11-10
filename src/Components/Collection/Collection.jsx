@@ -1,3 +1,5 @@
+
+
 const Collection = ({collection,setCurrentSelections}) => {
     
     const handleClick = () => {
@@ -7,7 +9,7 @@ const Collection = ({collection,setCurrentSelections}) => {
 
 
     return ( 
-      <div onClick = {handleClick}>
+      <div  onClick = {handleClick}>
         {collection.title}
       </div>
         

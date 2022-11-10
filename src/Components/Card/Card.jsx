@@ -2,36 +2,35 @@ import { useEffect, useState } from 'react';
 import './Card.css'
 
 const Card = ({flashCards,currentCard}) => {
-    const [display,setDisplay] = useState(flashCards[currentCard].word);
-    const [word,setWord] = useState(true);
-    const [classStyle,setClassStyle] = useState('words');
+    const [flip, setFlip] = useState('');
+    const [speed,setSpeed] = useState('');
+    const [color,setColor] = useState('');
 
     useEffect(() => {
-        setDisplay(flashCards[currentCard].word);
-        setClassStyle('words')
-        setWord(true);
+        setColor('color')
+        setSpeed('')
+       setFlip('');
+       setColor('');
     },[flashCards,currentCard])
     
     const handleClick = () => {
-        if (word) {
-            setDisplay(flashCards[currentCard].definition);
-            setWord(false);
-            setClassStyle('definitions');
-        }
-        else {
-            setDisplay(flashCards[currentCard].word);
-            setWord(true);
-            setClassStyle('words');
-        }
+        setSpeed('speed');
+        if(flip == ''){setFlip('flip')}
+        else {setFlip('')}
     }
 
     return flashCards[0].word? (  
-        <div className="card-container" onClick = {handleClick}>
-            <div className={classStyle}>
-            {display}
+        <div className={`card-container ${flip} ${speed} ${color}`} onClick = {handleClick}>
+            <div className='card'>
+                <div className='words'>
+                {flashCards[currentCard].word}
+                </div>
+                <div className='definitions'>
+                {flashCards[currentCard].definition}
+                </div>
             </div>
         </div>
-    ): <div className='card-container'>Please Pick a Collection Above</div>;
+    ): <h1 className='card-container'>Please Pick a Collection Above</h1>;
 }
  
 export default Card;

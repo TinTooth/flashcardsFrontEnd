@@ -1,5 +1,5 @@
 .footer {
-    background-color: rgb(54, 79, 54);
+    background-color: #24371D;
     position: absolute;
     bottom: 0;
     height: 10vh;
@@ -28,7 +28,7 @@
 .invs{
     font-size: 35px;
     padding: 5px;
-    color: rgb(54, 79, 54);
+    color: #24371D;
     margin-right: 1.2em
 }
 

@@ -70,7 +70,7 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
                 <DeleteCard close = {handleDelete} deleteCard = {deleteCard} 
                 currentCard = {currentCard} flashCards = {flashCards}/>
             </Modal>
-            <div className='brand'>Brand</div>
+            <div className='brand'>FlashCards</div>
             
             <div className='edits'>
                 <div className="image-container">
@@ -83,7 +83,7 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
                     <img src={deleteIcon} alt="delete Icon" onClick = {handleDelete} />
                 </div>
             </div>
-            <div className="invs">Brand</div>
+            <div className="invs">FlashCards</div>
         </div>
      );
 }

@@ -31,8 +31,6 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, se
         addCard(card,collections[collections.length-1].id)
     }
 
-
-   
     async function addCard(newCard,id) {
         let endpoint = 'http://127.0.0.1:8000/api/collections/' + id +'/cards/'
         const response = await axios.post(endpoint,newCard)
