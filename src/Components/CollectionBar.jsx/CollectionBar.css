@@ -34,7 +34,7 @@
 }
 .c-box3 {
     margin: auto;
-    
+    cursor: pointer;
     width: 25%;
 }
 
@@ -58,6 +58,8 @@
 
 .dropdown:hover .dropdown-content {display: block; box-shadow: 3em;}
 .collection:hover {background-color: rgb(161, 161, 161); cursor: pointer;}
+.c-box1:hover {color: aliceblue;}
+.c-box3:hover {color: aliceblue;}
 
 .drpli {
     display: flex;
@@ -73,4 +75,6 @@
 
 .collection {
     padding: .25em;
+    user-select: none;
+    color: black;
 }

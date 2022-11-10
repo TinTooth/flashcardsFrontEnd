@@ -15,11 +15,11 @@ const AddCard = ({close, addCard, currentCollection, display, noClose}) => {
     return currentCollection.title && !noClose ?(  
         <form onSubmit = {handleSubmit}>
             <div className='form-group'>
-                <label>Question</label>
+                <label>Word:</label>
                 <input type="text" value = {word} onChange = {(e)=> setWord(e.target.value)}/>
             </div>
             <div className = 'form-group'>
-                <label>Answer</label>
+                <label>Definition:</label>
                 <textarea value = {definition} onChange = {(e)=> setDefinition(e.target.value)}/>
             </div>
             <button type = 'sumbit'>Add Card</button>
@@ -28,11 +28,11 @@ const AddCard = ({close, addCard, currentCollection, display, noClose}) => {
     ): noClose ? (
         <form onSubmit = {handleSubmit}>
         <div className='form-group'>
-            <label>Question</label>
+            <label>Word:</label>
             <input type="text" value = {word} onChange = {(e)=> setWord(e.target.value)}/>
         </div>
         <div className = 'form-group'>
-            <label>Answer</label>
+            <label>Definition:</label>
             <textarea value = {definition} onChange = {(e)=> setDefinition(e.target.value)}/>
         </div>
         <button type = 'sumbit'>Add Card</button>

@@ -20,7 +20,8 @@
 
 .edits{
     display: flex;
-    gap: 3em;
+    align-content: center;
+    gap: 5em;
     color:aliceblue;
 }
 
@@ -31,6 +32,18 @@
     margin-right: 1.2em
 }
 
-.edit-card {
+.image-container {
+    width: 125px;
+    height: 75px;
     cursor: pointer;
+}
+
+img {
+   max-width: 100%;
+   max-height: 100%
+}
+
+.image-container:hover {
+    background-color: rgb(117, 149, 117);
+    border-radius: 5px;
 }

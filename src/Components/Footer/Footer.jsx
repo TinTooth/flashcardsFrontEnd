@@ -5,6 +5,9 @@ import AddCard from '../AddCard/AddCard';
 import axios from 'axios';
 import DeleteCard from '../DeleteCard/DeleteCard';
 import EditCard from '../EditCard/EditCard';
+import addIcon from "../../Images/AddIcon.png";
+import editIcon from "../../Images/EditIcon.png";
+import deleteIcon from "../../Images/DeleteIcon.png";
 
 
 
@@ -68,10 +71,15 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
             <div className='brand'>Brand</div>
             
             <div className='edits'>
-                <div  className = 'edit-card'onClick = {handleAdd}>Add Card</div>
-                <div  className = 'edit-card'onClick = {handleEdit}>Edit Card</div>
-                <div  className = 'edit-card'onClick = {handleDelete}>Delete Card</div>
-                
+                <div className="image-container">
+                    <img src={addIcon} alt="add Icon" onClick = {handleAdd} />
+                </div>
+                <div className="image-container">
+                    <img src={editIcon} alt="edit Icon" onClick = {handleEdit} />
+                </div>
+                <div className="image-container">
+                    <img src={deleteIcon} alt="delete Icon" onClick = {handleDelete} />
+                </div>
             </div>
             <div className="invs">Brand</div>
         </div>

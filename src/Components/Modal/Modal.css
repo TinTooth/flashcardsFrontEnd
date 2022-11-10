@@ -13,11 +13,13 @@
 
 
 .modal {
-    background-color: rgb(209, 206, 206);
+    background-color: rgb(207, 209, 211);
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .modal-header{
+    font-size: larger;
     padding-left:20px;
     padding-right:20px;
     padding-top: 3px;
@@ -34,7 +36,7 @@
 
 .modal-close-btn {
     cursor: pointer;
-    font-size: larger;
+    font-size: 30px;
 }
 
 .modal-body {
