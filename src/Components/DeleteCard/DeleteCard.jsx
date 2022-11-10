@@ -6,14 +6,21 @@ const DeleteCard = ({close, deleteCard, flashCards, currentCard}) => {
         close();
     }
     
-    return flashCards[0].word ? (  
+    return flashCards[0].word && flashCards.length > 1?(  
         <form onSubmit={handleSubmit}>
 
             <h3>Are you sure you want to DELETE the "{flashCards[currentCard].word}" card?</h3>
             <button type = 'submit'>DELETE</button>
             <button className='bgp' onClick = {close}>Cancel</button>
         </form>
-    ) :
+    ): flashCards[0].word ?(
+        <form >
+        <div className='modal-warning'>
+            <h3>Collections need at least ONE Card </h3>
+            Add another Card before Deleting "{flashCards[currentCard].word}" </div>
+        <button className = 'bgp'onClick = {close}>Close</button>
+    </form>
+     ) :
     <form >
         <h3 className='modal-warning'>Please Select a Collection First </h3>
         <button className = 'bgp'onClick = {close}>Close</button>

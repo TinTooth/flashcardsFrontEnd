@@ -43,11 +43,16 @@
 }
 
 form {
-    font-size: larger;
+    font-size: 25px;
 }
 
 .divider{
     text-align: center;
     border-bottom: 1px solid gray;
     margin-bottom: 1em;
+}
+
+.modal-warning{
+    padding: 2em;
+    padding-bottom: 3em;
 }
