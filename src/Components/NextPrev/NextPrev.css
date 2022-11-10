@@ -22,6 +22,7 @@
   }
   
   .card-select:hover{
-    text-shadow: 3px 3px 4px rgb(223, 214, 214);
+    /* text-shadow: 3px 3px 4px rgb(223, 214, 214); */
+    color:aliceblue
     /* background-image: radial-gradient(45% 30% at center,rgba(21, 78, 33, 0.35),rgba(103, 187, 103, 0.25),rgb(154, 194, 154,0)); */
   }

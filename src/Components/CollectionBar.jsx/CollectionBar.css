@@ -24,11 +24,13 @@
     width: 25%;
 }
 .c-box2 {
-    background-color: aliceblue;
+    background-color: rgb(207, 209, 211);
     margin: auto;
     width: 50%;
     padding-top: 1em;
     padding-bottom: 1em;
+    /* font-size: larger; */
+    font-weight: bold;
 }
 .c-box3 {
     margin: auto;
@@ -64,7 +66,9 @@
     justify-content: center;
    border-top: solid 2px rgb(68, 67, 67);
    margin-top: 1em;
-   background-color:rgb(209, 206, 206); ;
+   background-color:rgb(237, 233, 233); ;
+   box-shadow:3px 3px 4px 3px rgba(0,0,0,.2);
+    
 }
 
 .collection {
