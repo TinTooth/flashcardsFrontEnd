@@ -29,7 +29,7 @@ const EditCard = ({currentCard,flashCards,editCard,close, currentCollection}) =>
         </form>
     ) :
     <form >
-    <h3 className='modal-warning'>Please Select a Collection First </h3>
+    <h4 className='modal-warning'>Please Select a Collection First </h4>
     <button className = 'bgp'onClick = {close}>Close</button>
     </form>
 

@@ -1,5 +1,5 @@
 *{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Fragment Mono', monospace;
 }
 
 .main-container {
@@ -49,8 +49,8 @@ input {
 
 textarea {
   width:350px;
-  min-width:350px;
-  max-width: 350px;
+  min-width:450px;
+  max-width: 450px;
   max-height: 250px;
   min-height: 100px;
   border: none;
@@ -74,6 +74,7 @@ form button{
   padding: .75em;
   margin-bottom: 1em;
   background-color: rgb(54, 79, 54);
+  font-size: large
 }
 
 form{

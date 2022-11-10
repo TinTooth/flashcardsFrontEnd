@@ -18,8 +18,7 @@ const handleSubmit = (e) => {
 
     return (
         <form onSubmit = {handleSubmit}>
-            
-            <div className='form-group'>
+            <div className='form-group pad'>
                 <label>Collection Title</label>
                 <input type="text" value = {title} onChange = {(e)=> setTitle(e.target.value)}/>
             </div>

@@ -56,3 +56,17 @@ form {
     padding: 2em;
     padding-bottom: 3em;
 }
+
+input { 
+    font-size: large;
+}
+
+textarea {
+    font-size: large;
+}
+
+.pad {
+    padding: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
