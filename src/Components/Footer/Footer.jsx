@@ -40,8 +40,10 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
         let endpoint = 'http://127.0.0.1:8000/api/collections/' + currentCollection.id +'/cards/' +flashCards[currentCard].id + '/'
         const response = await axios.delete(endpoint)
         if (response.status === 204){
-            setCurrentCard(currentCard-1)
-            getFlashCards(currentCollection.id)
+            if(currentCard != 0){
+                setCurrentCard(currentCard-1);
+            }
+            getFlashCards(currentCollection.id);
         }
     } 
 
