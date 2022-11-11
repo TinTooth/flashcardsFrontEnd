@@ -8,7 +8,7 @@ import AddCard from '../AddCard/AddCard';
 import dropDown from '../../Images/Drop2.png'
 
 
-const CollectionBar = ({setCurrentSelections, collections, currentCollection, setCurrentCollection, getAllCollections,getFlashCards}) => {
+const CollectionBar = ({setCurrentSelections, collections, currentCollection, getAllCollections,getFlashCards}) => {
     const [showAdd,setShowAdd] = useState(false);
     const [showAddCard,setShowAddCard] = useState(false);
 
@@ -21,8 +21,8 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, se
         else {setShowAddCard(false);}
     }
 
-    const createCollection = (obj) => {
-        addCollection(obj.newCollection);
+    const createCollection = (newCollection) => {
+        addCollection(newCollection);
         setShowAddCard(true);
     }
 
@@ -46,15 +46,13 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, se
         }
     }
 
-
-
     return (  
         <>
-        <Modal title = 'Create Collecton' onClose = {handleCreateCollection} show = {showAdd} >
+        <Modal title = 'Create Collecton' onClose = {handleCreateCollection} modal = {showAdd} >
             <AddCollection close = {handleCreateCollection} createCollection = {createCollection}/>
         </Modal>
-        <Modal title = 'Add First Card' onClose = {handleAddCard} show = {showAddCard} noClose = {true} >
-            <AddCard close = {handleAddCard} addCard = {createCard} currentCollection = {currentCollection} display = {true} noClose = {true}/>
+        <Modal title = 'Add First Card' onClose = {handleAddCard} modal = {showAddCard} noClose = {true} >
+            <AddCard close = {handleAddCard} onSubmit = {createCard} currentCollection = {currentCollection} display = {true} noClose = {true}/>
         </Modal>
 
 

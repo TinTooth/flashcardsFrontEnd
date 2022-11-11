@@ -11,12 +11,18 @@ function App() {
   const [collections,setCollections] = useState([]);
   const [flashCards,setFlashCards] = useState([{word:"",definition: ""}]);
   const [currentCollection,setCurrentCollection] = useState({id: 0 ,title:''});
-  const [currentCard, setCurrentCard] = useState(0)
+  const [currentCard, setCurrentCard] = useState(0);
+  const [cardColor,setCardColor] = useState('');
+  const [flip, setFlip] = useState('');
 
   useEffect(() => {
     getAllCollections();
 
   },[]);
+
+  const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
 
   async function getAllCollections() {
     const response = await axios.get('http://127.0.0.1:8000/api/collections/');
@@ -30,22 +36,52 @@ function App() {
   }
 
   const setCurrentSelections = (collection) => {
-      setCurrentCollection(collection);
-      getFlashCards(collection.id);
-      setCurrentCard(0);
+      if (flip){
+        setCardColor('color');
+        waitSetSellection(collection);
+      }
+      else {
+        setCurrentCollection(collection);
+        getFlashCards(collection.id);
+        setCurrentCard(0);
+      }
+      
   }
 
   const upCardClick = () => {
-      let result = currentCard + 1;
-      if (result+1 > flashCards.length){setCurrentCard(0);}
-      else { setCurrentCard(result);}
-  }
+    let result = currentCard + 1;
+    if (result+1 > flashCards.length){
+      setCardColor('color');
+      waitSetCard(0)
+    }
+    else { 
+      setCardColor('color');
+      waitSetCard(result)
+    }
+}
 
-  const downCardClick = () => {
-    let result = currentCard - 1;
-    let length = flashCards.length;
-    if ( result < 0 ){ setCurrentCard(length-1);}
-    else { setCurrentCard(result);}
+const downCardClick = () => {
+  let result = currentCard - 1;
+  let length = flashCards.length;
+  if ( result < 0 ){ 
+    setCardColor('color');
+    waitSetCard(length-1)
+  }
+  else { 
+    setCardColor('color');
+    waitSetCard(result)
+    
+  }
+}
+const waitSetCard = async (result) => {
+  await sleep(200);
+  setCurrentCard(result);
+}
+const waitSetSellection = async (collection) => {
+  await sleep(250);
+  setCurrentCollection(collection);
+  getFlashCards(collection.id);
+  setCurrentCard(0);
 }
 
 
@@ -53,19 +89,16 @@ function App() {
     <div>
       
       <div className='main-container'>
-        <NextPrev setCurrentCard={setCurrentCard} 
-          flashCards = {flashCards} currentCard = {currentCard} 
-          click = {downCardClick} text = 'PREV'></NextPrev> 
+        <NextPrev  flashCards = {flashCards} click = {downCardClick} text = 'PREV' ></NextPrev> 
         <div className='center-container'>
           <CollectionBar  getFlashCards={getFlashCards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
           collections={collections} setCurrentCard = {setCurrentCard} 
           currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection}/>
-          <Card flashCards={flashCards} currentCard={currentCard}/>
+          <Card flip = {flip} setFlip = {setFlip} flashCards={flashCards} currentCard={currentCard} color = {cardColor} setColor = {setCardColor}/>
           <CardNum flashCards={flashCards} currentCard = {currentCard}/>
         </div>
-        <NextPrev setCurrentCard={setCurrentCard} 
-          flashCards = {flashCards} currentCard = {currentCard} 
-          click = {upCardClick} text = 'NEXT'></NextPrev> 
+        <NextPrev
+          flashCards = {flashCards} click = {upCardClick} text = 'NEXT'></NextPrev> 
       </div> 
       <Footer currentCollection={currentCollection} getFlashCards ={getFlashCards}
        currentCard = {currentCard} flashCards = {flashCards}

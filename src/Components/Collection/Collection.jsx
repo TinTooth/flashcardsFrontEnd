@@ -6,8 +6,6 @@ const Collection = ({collection,setCurrentSelections}) => {
         setCurrentSelections(collection);
     }
     
-
-
     return ( 
       <div  onClick = {handleClick}>
         {collection.title}

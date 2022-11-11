@@ -1,8 +1,8 @@
 import './Modal.css'
 
 
-const Modal = ({title,onClose,children,show,noClose}) => {
-    return show && noClose == null ?(
+const Modal = ({title,onClose,children,modal,noClose}) => {
+    return modal && noClose == null ?(
         <>
         <div className = "modal-bg">
             <div className='modal'>
@@ -16,7 +16,7 @@ const Modal = ({title,onClose,children,show,noClose}) => {
             </div>
         </div>
         </> 
-     ) :show && noClose ? (
+     ) :modal && noClose ? (
         <div className="modal-bg">
         <div className='modal'>
             <div className="modal-header">

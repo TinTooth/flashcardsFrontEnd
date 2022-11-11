@@ -11,16 +11,8 @@
   
 }
 
-.bg {
-  background-color: rgb(154, 194, 154);
-}
-
-.bgs{
-  background-color: rgb(54, 79, 54);
-}
-
-.bgp{
-  background-color: rgb(61, 61, 61);
+.bgp {
+  background-color:rgb(61, 61, 61); ;
 }
 
 .card-select {
@@ -29,7 +21,7 @@
   justify-content: center;
   color: rgb(61, 61, 61);
   width: 25%;
-  font-size: 35px;
+  font-size: 3vh;
   cursor: pointer;
   height: 100%;
   /* user-select: none; */
@@ -43,7 +35,7 @@
 input {
   margin-top: .5em;
   border: none;
-  border-radius: 3px;
+  border-radius: .75vh;
   height: 2em;
 }
 
@@ -74,9 +66,9 @@ form button{
   padding: .75em;
   margin-bottom: 1em;
   background-color: rgb(54, 79, 54);
-  font-size: large
+  font-size: 1.75vh;
 }
 
 form{
-  font-size: 25px;
+  font-size: 3vh;
 }

@@ -14,31 +14,31 @@
 
 .modal {
     background-color: rgb(207, 209, 211);
-    border-radius: 10px;
+    border-radius: .75vh;
     font-weight: bold;
 }
 
 .modal-header{
     text-shadow: 2px 0px 5px  rgb(101, 101, 101);
-    font-size: larger;
-    padding-left:20px;
-    padding-right:20px;
+    font-size: 2vh;
+    padding-left:2vh;
+    padding-right:2vh;
     padding-top: 3px;
     color:aliceblue;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: .75vh;
+    border-top-right-radius: .75vh;
     border-bottom: solid aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap :5em;
     background-color: rgb(54, 79, 54);
-    box-shadow:0px 3px 3px 3px rgba(0,0,0,.1);
+    box-shadow:0px .5vh .75vh .2vh rgba(0,0,0,.2);
 }
 
 .modal-close-btn {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
 .modal-body {
@@ -47,7 +47,7 @@
 }
 
 form {
-    font-size: 25px;
+    font-size: 2vh;
 }
 
 .divider{
@@ -62,12 +62,12 @@ form {
 }
 
 input { 
-    font-size: large;
+    font-size: 2.2vh;
     box-shadow:0px 2px 6px 3px rgba(0,0,0,.1);
 }
 
 textarea {
-    font-size: large;
+    font-size: 2.2vh;
     box-shadow:0px 2px 6px 3px rgba(0,0,0,.1);
 }
 

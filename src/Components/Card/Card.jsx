@@ -1,32 +1,52 @@
+import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 import { useEffect, useState } from 'react';
 import './Card.css'
 
-const Card = ({flashCards,currentCard}) => {
-    const [flip, setFlip] = useState('');
+const Card = ({flashCards,currentCard, color,setColor,flip, setFlip}) => {
     const [speed,setSpeed] = useState('');
-    const [color,setColor] = useState('');
+
+    
 
     useEffect(() => {
-        setColor('color')
-        setSpeed('')
-       setFlip('');
-       setColor('');
-    },[flashCards,currentCard])
-    
+        if(flip == 'flip'){
+            flipcard();
+            changecolor(400);
+        }
+        else {
+            changecolor(250);
+        }
+        
+    },[flashCards,currentCard,color])
+
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
+
+    const changecolor = async (time) => {
+        await sleep(time);
+        setColor('');
+    }
+
+    const flipcard = async () => {
+        await sleep(150);
+        setFlip('');
+    }
+
     const handleClick = () => {
         setSpeed('speed');
         if(flip == ''){setFlip('flip')}
         else {setFlip('')}
+
     }
 
     return flashCards[0].word? (  
         <div className={`card-container ${flip} ${speed} ${color}`} onClick = {handleClick}>
             <div className='card'>
                 <div className='words'>
-                {flashCards[currentCard].word}
+                    {flashCards[currentCard].word}
                 </div>
                 <div className='definitions'>
-                {flashCards[currentCard].definition}
+                    {flashCards[currentCard].definition}
                 </div>
             </div>
         </div>
