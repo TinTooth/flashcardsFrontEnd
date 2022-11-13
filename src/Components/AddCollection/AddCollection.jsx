@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Input from '../Input/Input';
 
 
 const AddCollection = ({close, createCollection}) => {
@@ -16,12 +17,9 @@ const handleSubmit = (e) => {
     return (
         <div>
             <form onSubmit = {handleSubmit}>
-                <div className='form-group pad'>
-                    <label>Collection Title</label>
-                    <input type="text" value = {title} onChange = {(e)=> setTitle(e.target.value)}/>
-                </div>
+                <Input label = "Collection Title" value = {title} onChange = {setTitle}></Input>
                 <button type = 'sumbit'>Create Collection</button>
-                <button className = 'bgp'onClick = {close}>Cancel</button>
+                <button className = 'bgp' onClick = {close}>Cancel</button>
             </form>
         </div>
 

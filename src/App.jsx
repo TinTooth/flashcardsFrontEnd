@@ -84,7 +84,6 @@ const waitSetSellection = async (collection) => {
   setCurrentCard(0);
 }
 
-
   return (
     <div>
       
