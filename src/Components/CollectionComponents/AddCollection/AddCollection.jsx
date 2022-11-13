@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
+import Input from '../../CommonComponents/Input/Input';
 
 
 const AddCollection = ({close, createCollection}) => {
     const [title,setTitle] = useState('')
-   
-
-
-const handleSubmit = (e) => {
-    e.preventDefault();
-    let newCollection = {title:title};
-    close()
-    createCollection(newCollection);
-}
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let newCollection = {title:title};
+        close()
+        createCollection(newCollection);
+    }
 
     return (
         <div>

@@ -4,9 +4,11 @@
 
 .main-container {
   height: 90vh;
+  width: 100%;
   display: flex;
   background-color: #8BA182;
   align-content: center;
+  justify-content: center;
   flex-grow: 1;
   
 }
@@ -15,18 +17,31 @@
   background-color:rgb(61, 61, 61); ;
 }
 
+
 .card-select {
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgb(61, 61, 61);
   width: 25%;
-  font-size: 3vh;
+  font-size: 3.5vh;
   cursor: pointer;
   height: 100%;
-  /* user-select: none; */
-  
+  user-select: none;
 }
+
+.card-select:hover{
+  color:aliceblue 
+}
+.num {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 3.8vh;
+  color: rgb(61, 61, 61);
+  padding-top: 1em;
+}
+
 
 .center-container {
   width: 50%;
@@ -71,4 +86,8 @@ form button{
 
 form{
   font-size: 3vh;
+}
+
+.no-display {
+  display: none;
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Footer.css'
-import Modal from '../Modal/Modal';
-import AddCard from '../AddCard/AddCard';
+import Modal from '../CommonComponents/Modal/Modal';
+import AddCard from '../CardComponents/AddCard/AddCard';
 import axios from 'axios';
-import DeleteCard from '../DeleteCard/DeleteCard';
+import DeleteCard from '../CardComponents/DeleteCard/DeleteCard';
 import addIcon from "../../Images/AddIcon.png";
 import editIcon from "../../Images/EditIcon.png";
 import deleteIcon from "../../Images/DeleteIcon.png";

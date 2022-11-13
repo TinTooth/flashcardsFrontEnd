@@ -2,10 +2,8 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import './App.css';
 import Footer from './Components/Footer/Footer';
-import CardNum from './Components/CardNum/CardNum';
-import CollectionBar from './Components/CollectionBar.jsx/CollectionBar';
-import Card from './Components/Card/Card';
-import NextPrev from './Components/NextPrev/NextPrev';
+import CollectionBar from './Components/CollectionComponents/CollectionBar.jsx/CollectionBar';
+import Card from './Components/CardComponents/Card/Card';
 
 function App() {
   const [collections,setCollections] = useState([]);
@@ -14,6 +12,7 @@ function App() {
   const [currentCard, setCurrentCard] = useState(0);
   const [cardColor,setCardColor] = useState('');
   const [flip, setFlip] = useState('');
+  const [displayControls, setDisplayControls] = useState('no-display');
 
   useEffect(() => {
     getAllCollections();
@@ -45,7 +44,7 @@ function App() {
         getFlashCards(collection.id);
         setCurrentCard(0);
       }
-      
+      setDisplayControls('');
   }
 
   const upCardClick = () => {
@@ -86,18 +85,16 @@ const waitSetSellection = async (collection) => {
 
   return (
     <div>
-      
       <div className='main-container'>
-        <NextPrev  flashCards = {flashCards} click = {downCardClick} text = 'PREV' ></NextPrev> 
+      <div className={`card-select ${displayControls}`} onClick = {downCardClick}>PREV</div>
         <div className='center-container'>
           <CollectionBar  getFlashCards={getFlashCards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
           collections={collections} setCurrentCard = {setCurrentCard} 
           currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection}/>
           <Card flip = {flip} setFlip = {setFlip} flashCards={flashCards} currentCard={currentCard} color = {cardColor} setColor = {setCardColor}/>
-          <CardNum flashCards={flashCards} currentCard = {currentCard}/>
+          <div className = {`num ${displayControls}`}>{currentCard+1}/{flashCards.length}</div>
         </div>
-        <NextPrev
-          flashCards = {flashCards} click = {upCardClick} text = 'NEXT'></NextPrev> 
+        <div className={`card-select ${displayControls}`} onClick = {upCardClick}>NEXT</div>
       </div> 
       <Footer currentCollection={currentCollection} getFlashCards ={getFlashCards}
        currentCard = {currentCard} flashCards = {flashCards}

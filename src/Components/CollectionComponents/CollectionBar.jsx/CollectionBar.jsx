@@ -1,11 +1,11 @@
 import Collection from '../Collection/Collection';
 import './CollectionBar.css'
 import React, { useState } from 'react';
-import Modal from '../Modal/Modal';
+import Modal from '../../CommonComponents/Modal/Modal';
 import AddCollection from '../AddCollection/AddCollection';
 import axios from 'axios';
-import AddCard from '../AddCard/AddCard';
-import dropDown from '../../Images/Drop2.png'
+import AddCard from '../../CardComponents/AddCard/AddCard';
+import dropDown from '../../../Images/Drop2.png'
 
 
 const CollectionBar = ({setCurrentSelections, collections, currentCollection, getAllCollections,getFlashCards}) => {

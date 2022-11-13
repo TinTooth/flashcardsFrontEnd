@@ -1,6 +1,6 @@
 import './AddCard.css'
 import React, { useState } from 'react';
-import Input from '../Input/Input';
+import Input from '../../CommonComponents/Input/Input';
 
  const cardTemplate = {
         word:'',
