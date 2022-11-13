@@ -10,18 +10,16 @@ function App() {
   const [flashCards,setFlashCards] = useState([{word:"",definition: ""}]);
   const [currentCollection,setCurrentCollection] = useState({id: 0 ,title:''});
   const [currentCard, setCurrentCard] = useState(0);
-  const [cardColor,setCardColor] = useState('');
-  const [flip, setFlip] = useState('');
+  
   const [displayControls, setDisplayControls] = useState('no-display');
+  // last two are for animating the card. 
+  const [flip, setFlip] = useState('');
+  const [cardColor,setCardColor] = useState(''); 
 
   useEffect(() => {
     getAllCollections();
 
   },[]);
-
-  const sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
 
   async function getAllCollections() {
     const response = await axios.get('http://127.0.0.1:8000/api/collections/');
@@ -82,16 +80,22 @@ const waitSetSellection = async (collection) => {
   getFlashCards(collection.id);
   setCurrentCard(0);
 }
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 
   return (
     <div>
       <div className='main-container'>
-      <div className={`card-select ${displayControls}`} onClick = {downCardClick}>PREV</div>
+        <div className={`card-select ${displayControls}`} onClick = {downCardClick}>PREV</div>
         <div className='center-container'>
           <CollectionBar  getFlashCards={getFlashCards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
-          collections={collections} setCurrentCard = {setCurrentCard} 
-          currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection}/>
-          <Card flip = {flip} setFlip = {setFlip} flashCards={flashCards} currentCard={currentCard} color = {cardColor} setColor = {setCardColor}/>
+            collections={collections} setCurrentCard = {setCurrentCard} 
+            currentCollection = {currentCollection}
+            setCurrentCollection = {setCurrentCollection}/>
+          <Card flip = {flip} setFlip = {setFlip} flashCards={flashCards} currentCard={currentCard} 
+            color = {cardColor} setColor = {setCardColor}/>
           <div className = {`num ${displayControls}`}>{currentCard+1}/{flashCards.length}</div>
         </div>
         <div className={`card-select ${displayControls}`} onClick = {upCardClick}>NEXT</div>

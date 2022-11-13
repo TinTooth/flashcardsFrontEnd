@@ -8,6 +8,7 @@ import AddCard from '../../CardComponents/AddCard/AddCard';
 import dropDown from '../../../Images/Drop2.png'
 
 
+
 const CollectionBar = ({setCurrentSelections, collections, currentCollection, getAllCollections,getFlashCards}) => {
     const [showAdd,setShowAdd] = useState(false);
     const [showAddCard,setShowAddCard] = useState(false);
@@ -27,11 +28,10 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, ge
     }
 
     const createCard = (card) => {
-        console.log(collections);
-        addCard(card,collections[collections.length-1].id)
+        addFirstCard(card,collections[collections.length-1].id)
     }
 
-    async function addCard(newCard,id) {
+    async function addFirstCard(newCard,id) {
         let endpoint = 'http://127.0.0.1:8000/api/collections/' + id +'/cards/'
         const response = await axios.post(endpoint,newCard)
         if (response.status === 201){
@@ -51,16 +51,17 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, ge
         <Modal title = 'Create Collecton' onClose = {handleCreateCollection} modal = {showAdd} >
             <AddCollection close = {handleCreateCollection} createCollection = {createCollection}/>
         </Modal>
-        <Modal title = 'Add First Card' onClose = {handleAddCard} modal = {showAddCard} noClose = {true} >
-            <AddCard close = {handleAddCard} onSubmit = {createCard} currentCollection = {currentCollection} display = {true} noClose = {true}/>
+        <Modal title = 'Add First Card' onClose = {handleAddCard} modal = {showAddCard} noClose = 'yes' >
+            <AddCard close = {handleAddCard} onSubmit = {createCard} currentCollection = {currentCollection} display = {true} noClose = 'yes'/>
         </Modal>
 
 
         <div className="collection-container">
             <div className='bar'>
-                <div className="dropdown c-box1">
+                <div className="dropdown c-box1"> 
+                {/* didnt get around to making a wrapper/dropdown component */}
                     <div className = "dropbtn">Collections
-                    <div className='img-container'>
+                    <div className='img-container'>   
                         <img src= {dropDown} alt=" dropdown icon" />
                     </div>
                     </div>
@@ -85,3 +86,5 @@ const CollectionBar = ({setCurrentSelections, collections, currentCollection, ge
 }
  
 export default CollectionBar;
+
+

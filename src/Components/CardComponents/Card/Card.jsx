@@ -1,4 +1,4 @@
-import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
+
 import { useEffect, useState } from 'react';
 import './Card.css'
 
@@ -8,7 +8,7 @@ const Card = ({flashCards,currentCard, color,setColor,flip, setFlip}) => {
     
 
     useEffect(() => {
-        if(flip == 'flip'){
+        if(flip === 'flip'){
             flipcard();
             changecolor(400);
         }
@@ -34,7 +34,7 @@ const Card = ({flashCards,currentCard, color,setColor,flip, setFlip}) => {
 
     const handleClick = () => {
         setSpeed('speed');
-        if(flip == ''){setFlip('flip')}
+        if(flip === ''){setFlip('flip')}
         else {setFlip('')}
 
     }

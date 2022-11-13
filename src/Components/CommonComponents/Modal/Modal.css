@@ -77,3 +77,6 @@ textarea {
     text-align: center;
 }
 
+.no-close-yes {
+    display: none;
+}

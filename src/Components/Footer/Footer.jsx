@@ -57,7 +57,7 @@ const Footer = ({currentCollection, getFlashCards, currentCard, flashCards,setCu
 
     return ( 
         <div className='footer'>
-            <Modal title = 'Add Card' onClose = {handleAdd} modal ={showAdd} >
+            <Modal title = 'Add Card' onClose = {handleAdd} modal ={showAdd}>
                 <AddCard close = {handleAdd} onSubmit= {addCard} currentCollection={currentCollection}/>
             </Modal>
 

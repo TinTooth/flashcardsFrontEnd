@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Input from '../../CommonComponents/Input/Input';
 
  const cardTemplate = {
-        word:'',
-        definition:'',
+        word:' ',
+        definition:' ',
     }
     
 
@@ -20,21 +20,13 @@ const AddCard = ({close, onSubmit, currentCollection, noClose, cardData = {cardT
         close();
     }
 
-    return currentCollection.title && !noClose ?(  
+    return currentCollection.title?(  
         <div>
             <form onSubmit = {handleSubmit}>
-            <Input label = 'Word:' value = {word} onChange={setWord}/>
-            <Input textArea = {true} label = 'Definition:' valuee = {definition} onChange ={setDefinition}/>
-            <button type = 'sumbit'>Submit</button>
-            <button className = 'bgp'onClick = {close}>Cancel</button>
-            </form>
-        </div>
-    ): noClose ? (
-        <div>
-            <form onSubmit = {handleSubmit}>
-            <Input label = 'Word:' value = {word} onChange={setWord}/>
-            <Input label = 'Definition:' valuee = {definition} onChange ={setDefinition}/>
-            <button type = 'sumbit'>Submit</button>
+                <Input label = 'Word:' value = {word} onChange={setWord}/>
+                <Input textArea = {true} label = 'Definition:' value = {definition} onChange ={setDefinition}/>
+                <button type = 'sumbit'>Submit</button>
+                <button className = {`bgp no-close-${noClose}`}onClick = {close}>Cancel</button>
             </form>
         </div>
     ): 
